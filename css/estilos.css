@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Poppins, sans-serif;
+}
+header, footer{
+    width: 100%;
+    height: 100px;
+    background-color: #000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header, footer h1{
+    color: #ffff;
+}
+#main{
+    background-color: #191A19;
+    min-height: 1000px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+#main .inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: cornsilk;
+    max-width: 400px;
+    width: 100%;
+    height: 100px;
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+.inicio .radio-c{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    background: #000;
+    color: #FFF;
+    max-height: 720px ;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    margin: 2rem;
+}
+.form article{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+}
+textarea{
+    height: 200px !important;
+}
+.form article input, textarea{
+    resize: none;
+    width: 300px;
+    height: 40px;
+    padding: .6rem 1rem;
+    background: transparent;
+    border: 1px solid #464856;
+    box-sizing: border-box;
+    outline: none;
+    color: #FFF;
+}
+.form ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 500px;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding: 1rem;
+}
+.form ul li{
+    color: #FFF;
+    list-style: circle;
+}
+#button-a, #button-r{
+    background-color: #F0A500;
+    width: 200px;
+    height: 50px;
+    border: none;
+    color: #FFF;
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+#button-a, #button-r:hover{
+    cursor: pointer;
+}
+
+#main #resM{
+    font-size: 4rem;
+    color: #FFF;
+    font-weight: 600;
+    margin-top: 3rem;
+}
+#main .resultado-content{
+    background: #000;
+    color: #FFF;
+    max-width: 800px;
+    min-width: 300px;
+    width: 100%;
+    max-height: 720px ;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    margin: 2rem;
+}

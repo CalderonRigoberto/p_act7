@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Encuesta</title>
+</head>
+<body>
+        <header>
+            <h1>Encuesta</h1>
+        </header>
+        <section id="main">   
+
+            <article class="inicio" v-if=" estadoI==true">
+                <p>Te gusta programar?</p>
+                <div class="radio-c" >
+
+                    <input type="radio" v-on:click="si()" name="programar" value="si" id="si">Si
+                    <input type="radio" v-on:click="no()" name="programar" value="no"  id="no">No
+                    
+                </div>
+            </article>
+            <section class="form" v-if="estado">
+                <article>
+                    <p>Cuantos años llevas programando</p>
+                    <input required type="number" min="0" v-model="aProgramando" @keyup="">
+                    <article v-if=" aProgramando<3 " >
+                        <label for="">¿Que te motiva a programar?</label>
+                        <input required v-model="mensajeM" type="text" value="">
+                    </article>
+                    <article v-if=" aProgramando>=3 " >
+                        <label for="">¿Cual es tu experiencia programando?</label>
+                        <textarea required v-model="mensaje" name="" id="" cols="30" rows="10"></textarea>
+                    </article>
+                </article>
+                <article>
+
+                    <p>Cuantos lenguajes de programación conoces?</p>
+                    <input type="text"  required v-model="lProgramar"  @keyup.enter="agregarL()">
+                    <button id="button-a" @click="agregarL()">Agregar</button>
+                    
+                </article>
+                <ul>
+                    <li v-for="(valor, index) in lProgramacion" :key="index">{{valor}}</li>
+                </ul>
+                <article><button id="button-r" @click=m()> Mostrar resultados</button> </article>
+                
+            </section>
+            
+            <article class="resultado-content" v-if="mostrar==true && estadoE==true">
+
+                <h1>| RESULTADOS |</h1><br>
+                <p>Te gusta programar: si</p>
+                <p>Años programando: {{aProgramando}}</p>
+                <p v-if="aProgramando<3">
+                      Mensaje de motivacion: {{mensajeM}}
+                </p>
+                <p v-if="aProgramando>=3">
+                    Experiencia: {{mensaje}}
+                </p>
+                <p>Lenguajes de programacion:</p>
+                <ul>
+                  <li v-for="(valor, index) in lProgramacion" :key="index">{{valor}}</li>
+                </ul>
+            </article>
+
+            <article v-if="estadoI== false && estado==false">
+                <p id="resM">¡Gracias por responder!</p>
+            </article>
+        </section>
+        <footer>
+            <h1>Hecho por Rigoberto Calderon- VUE - 404 EVN</h1>
+        </footer>
+        <script src="js/vue.js"></script>
+        <script src="js/index.js"></script>
+</body>
+</html>
